@@ -1,0 +1,24 @@
+  <app-listado-generico [listado]="peliculas">
+    <ng-container contenido>
+      <div class="peliculas-contenedor">
+        @for (pelicula of peliculas; track $index){
+          <div class="pelicula-contenedor">
+            <a>
+              @if (pelicula.poster) {
+                <img [src] = "pelicula.poster" width="169" height="250" />
+              } @else {
+                <img srcc = "pelicula.jpg" width="169" height="250" />
+              }
+            </a>
+            <P>
+              <a>{{pelicula.titulo}}</a>
+            </P>
+            <div>
+              <a mat-flat-button>Editar</a>
+              <button mat-flat-button type="button" color="warn">Borrar</button>
+            </div>
+          </div>
+        }
+      </div>
+    </ng-container>
+  </app-listado-generico>
